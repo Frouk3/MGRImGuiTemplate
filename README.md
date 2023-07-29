@@ -8,7 +8,7 @@ MGRImGuiTemplate is a repository template targeted to draw ImGui in game, templa
 - [MGR Plugin SDK](https://github.com/Frouk3/mgr-plugin-sdk)
 
 ## How to get started?
-All is simple, very simple
+All is simple, very simple<br/>
 Here's an example of hello world
 ```cpp
 void gui::RenderWindow()
