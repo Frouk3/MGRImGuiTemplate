@@ -2,10 +2,10 @@
 MGRImGuiTemplate is a repository template targeted to draw ImGui in game, template is used to not repeat every imgui process over and over again
 
 ## What's used?
-ImGui 1.76(WIP)
-kiero
-MinHook(for kiero work)
-MGR Plugin SDK
+- [ImGui](https://github.com/ocornut/imgui) 1.76(WIP)
+- [kiero](https://github.com/Rebzzel/kiero/tree/master)
+- [MinHook](https://github.com/TsudaKageyu/minhook)(for kiero work)
+- [MGR Plugin SDK](https://github.com/Frouk3/mgr-plugin-sdk)
 
 ## How to get started?
 All is simple, very simple
