@@ -8,19 +8,6 @@
 
 #include <Hw.h>
 
-void gui::RenderWindow()
-{
-	ImGui_ImplDX9_NewFrame();
-	ImGui_ImplWin32_NewFrame();
-	ImGui::NewFrame();
-
-	// !!! PUT YOUR IMGUI CODE HERE !!!
-
-	ImGui::EndFrame();
-	ImGui::Render();
-	ImGui_ImplDX9_RenderDrawData(ImGui::GetDrawData());
-}
-
 void gui::OnReset::Before()
 {
 	ImGui_ImplDX9_InvalidateDeviceObjects();
@@ -46,5 +33,13 @@ void gui::OnEndScene()
 		init = true;
 	}
 
+	ImGui_ImplDX9_NewFrame();
+	ImGui_ImplWin32_NewFrame();
+	ImGui::NewFrame();
+
 	gui::RenderWindow();
+
+	ImGui::EndFrame();
+	ImGui::Render();
+	ImGui_ImplDX9_RenderDrawData(ImGui::GetDrawData());
 }

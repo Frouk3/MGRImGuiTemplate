@@ -12,3 +12,7 @@ void plugin::OnStartup()
     // and your events here
 }
 
+void gui::RenderWindow()
+{
+    // PUT HERE IMGUI CODE
+}
