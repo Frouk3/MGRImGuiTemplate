@@ -1,6 +1,4 @@
-﻿#include "../kiero.h"
-
-#include "win32_impl.h"
+﻿#include "win32_impl.h"
 #include <Windows.h>
 
 #include "../imgui/imgui.h"
