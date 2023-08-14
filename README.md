@@ -13,20 +13,12 @@ Here's an example of hello world
 ```cpp
 void gui::RenderWindow()
 {
-	ImGui_ImplDX9_NewFrame();
-	ImGui_ImplWin32_NewFrame();
-	ImGui::NewFrame();
-
-        // !!! PUT YOUR IMGUI BETWEEN COMMENTS HERE !!!
         ImGui::Begin("Test");
         ImGui::Text("Hello World!");
         ImGui::End();
-        // 
-
-	ImGui::EndFrame();
-	ImGui::Render();
-	ImGui_ImplDX9_RenderDrawData(ImGui::GetDrawData());
 }
 ```
+
+to render window, all you need is to write all related code to dllmain in `gui::RenderWindow`, after `plugin::OnStartup`
 The result is<br/>
 ![image](https://github.com/Frouk3/MGRImGuiTemplate/assets/68140414/fd3ba97e-fb05-47bc-bc7b-a1a402dadd01)
