@@ -4,6 +4,8 @@
 #include <assert.h>
 #include "gui.h"
 
+#include "imgui/imgui.h"
+
 void plugin::OnStartup()
 {
     plugin::OnDeviceReset::Before::Add(gui::OnReset::Before);
