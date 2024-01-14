@@ -18,6 +18,8 @@ void gui::RenderWindow()
         ImGui::End();
 }
 ```
+[MGR ImGui Template](https://github.com/Frouk3/MGRImGuiTemplate/files/12339727/MGR.ImGui.Template.zip)<br />
+Visual Studio template to make this kind of mods
 
 to render window, all you need is to write all related code to dllmain in `gui::RenderWindow`, after `plugin::OnStartup`
 The result is<br/>
