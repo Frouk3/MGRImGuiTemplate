@@ -8,13 +8,13 @@
 
 void plugin::OnStartup()
 {
-    plugin::OnDeviceReset::Before::Add(gui::OnReset::Before);
-    plugin::OnDeviceReset::After::Add(gui::OnReset::After);
-    plugin::OnEndScene::Add(gui::OnEndScene);
+    Events::OnDeviceReset.before += gui::OnReset::Before;
+    Events::OnDeviceReset.after += gui::OnReset::After;
+    Events::OnEndScene += gui::OnEndScene;
     // and your events here
 }
 
 void gui::RenderWindow()
 {
-    // PUT HERE IMGUI CODE
+
 }
