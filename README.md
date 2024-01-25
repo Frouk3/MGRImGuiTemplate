@@ -3,8 +3,6 @@ MGRImGuiTemplate is a repository template targeted to draw ImGui in game, templa
 
 ## What's used?
 - [ImGui](https://github.com/ocornut/imgui) 1.76(WIP)
-- [kiero](https://github.com/Rebzzel/kiero/tree/master)
-- [MinHook](https://github.com/TsudaKageyu/minhook)(for kiero work)
 - [MGR Plugin SDK](https://github.com/Frouk3/mgr-plugin-sdk)
 
 ## How to get started?
@@ -18,7 +16,7 @@ void gui::RenderWindow()
         ImGui::End();
 }
 ```
-[MGR ImGui Template](https://github.com/Frouk3/MGRImGuiTemplate/files/13932934/MGRImGuiTemplate.zip)<br />
+[MGR ImGui Template](https://github.com/Frouk3/MGRImGuiTemplate/files/14054648/MGR.ImGui.Template.zip) <br />
 Visual Studio template to make this kind of mods
 
 to render window, all you need is to write all related code to dllmain in `gui::RenderWindow`, after `plugin::OnStartup`
