@@ -10,5 +10,7 @@ namespace gui
 		void After();
 	}
 
+	void LoadStyle();
+
 	void OnEndScene();
 }

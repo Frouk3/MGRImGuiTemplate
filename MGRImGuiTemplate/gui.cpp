@@ -1,12 +1,26 @@
 #include "gui.h"
 
-#include "impl/win32_impl.h"
-
 #include "imgui/imgui.h"
 #include "imgui/imgui_impl_dx9.h"
 #include "imgui/imgui_impl_win32.h"
 
 #include <Hw.h>
+
+static WNDPROC oWndProc = NULL;
+
+extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+
+LRESULT CALLBACK hkWindowProc(
+	_In_ HWND   hwnd,
+	_In_ UINT   uMsg,
+	_In_ WPARAM wParam,
+	_In_ LPARAM lParam
+)
+{
+	if (ImGui_ImplWin32_WndProcHandler(hwnd, uMsg, wParam, lParam) > 0)
+		return 1L;
+	return ::CallWindowProcA(oWndProc, hwnd, uMsg, wParam, lParam);
+}
 
 void gui::OnReset::Before()
 {
@@ -24,11 +38,13 @@ void gui::OnEndScene()
 
 	if (!init)
 	{
-		impl::win32::init(Hw::OSWindow);
+		oWndProc = (WNDPROC)::SetWindowLongPtr(Hw::OSWindow, GWLP_WNDPROC, (LONG)hkWindowProc);
 
 		ImGui::CreateContext();
 		ImGui_ImplWin32_Init(Hw::OSWindow);
 		ImGui_ImplDX9_Init(Hw::GraphicDevice);
+
+		gui::LoadStyle();
 
 		init = true;
 	}
@@ -42,4 +58,11 @@ void gui::OnEndScene()
 	ImGui::EndFrame();
 	ImGui::Render();
 	ImGui_ImplDX9_RenderDrawData(ImGui::GetDrawData());
+}
+
+void gui::LoadStyle()
+{
+	ImGuiStyle& style = ImGui::GetStyle();
+	
+	// your style settings here
 }
