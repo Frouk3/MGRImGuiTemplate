@@ -12,7 +12,10 @@ public:
 	{
 		Events::OnDeviceReset.before += gui::OnReset::Before;
 		Events::OnDeviceReset.after += gui::OnReset::After;
-		Events::OnEndScene += gui::OnEndScene;
+		Events::OnEndScene += gui::OnEndScene; 
+		/* // Or if you want to switch it to Present
+		Events::OnPresent += gui::OnEndScene;
+		*/
 	}
 
 	Plugin()
