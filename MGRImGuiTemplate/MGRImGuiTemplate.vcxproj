@@ -43,7 +43,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(MGR_PLUGIN_SDK)shared;$(MGR_PLUGIN_SDK)game\Havok;$(MGR_PLUGIN_SDK)game;$(MGR_PLUGIN_SDK)shared\dxsdk\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(MGR_PLUGIN_SDK)game;$(MGR_PLUGIN_SDK)game\Havok;$(MGR_PLUGIN_SDK)shared;$(MGR_PLUGIN_SDK)shared\dxsdk\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <Optimization>MinSpace</Optimization>
     </ClCompile>
@@ -56,6 +56,12 @@
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(MGR_PLUGIN_SDK)shared\dxsdk\</AdditionalLibraryDirectories>
     </Link>
+    <PostBuildEvent>
+      <Command>if $(MGR_PLUGIN_SDK_USES_MODLOADER) EQU 1 (copy /Y "$(TargetPath)" "$(MGR_PLUGIN_SDK_SCRIPT_OUTPUT_DIR)$(ProjectName)\" &amp;&amp; copy /Y "$(ProjectDir)mod.ini" "$(MGR_PLUGIN_SDK_SCRIPT_OUTPUT_DIR)$(ProjectName)\") else (copy /Y "$(TargetPath)" "$(MGR_PLUGIN_SDK_SCRIPT_OUTPUT_DIR)")</Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>if $(MGR_PLUGIN_SDK_USES_MODLOADER) EQU 1 (if not exist "$(MGR_PLUGIN_SDK_SCRIPT_OUTPUT_DIR)$(ProjectName)\" (mkdir "$(MGR_PLUGIN_SDK_SCRIPT_OUTPUT_DIR)$(ProjectName)\"))</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="framework.h" />
@@ -82,6 +88,9 @@
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="mod.ini" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
