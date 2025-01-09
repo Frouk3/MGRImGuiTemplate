@@ -16,7 +16,7 @@ void gui::RenderWindow()
         ImGui::End();
 }
 ```
-[MGR ImGui Template](https://github.com/user-attachments/files/18271144/MGRImGuiTemplate.zip)<br />
+[MGR ImGui Template](https://github.com/user-attachments/files/18361369/MGRImGuiTemplate.zip)<br />
 To install a template you need to go to your documents folder and find `Visual Studio year` <br/>
 Move the template zip into the `Templates\ProjectTemplates\`
 
