@@ -1,5 +1,3 @@
-#include "pch.h"
-#include <assert.h>
 #include "gui.h"
 #include <Events.h>
 
