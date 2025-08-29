@@ -2,7 +2,7 @@
 MGRImGuiTemplate is a repository template targeted to draw ImGui in game, template is used to not repeat every imgui process over and over again
 
 ## What's used?
-- [ImGui](https://github.com/ocornut/imgui) 1.91.1
+- [ImGui](https://github.com/ocornut/imgui) 1.91.8
 - [MGR Plugin SDK](https://github.com/Frouk3/mgr-plugin-sdk)
 
 ## How to get started?
