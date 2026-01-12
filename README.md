@@ -2,7 +2,7 @@
 MGRImGuiTemplate is a repository template targeted to draw ImGui in game, template is used to not repeat every imgui process over and over again
 
 ## What's used?
-- [ImGui](https://github.com/ocornut/imgui) 1.76(WIP)
+- [ImGui](https://github.com/ocornut/imgui) 1.91.8
 - [MGR Plugin SDK](https://github.com/Frouk3/mgr-plugin-sdk)
 
 ## How to get started?
@@ -16,7 +16,7 @@ void gui::RenderWindow()
         ImGui::End();
 }
 ```
-[MGR ImGui Template](https://github.com/user-attachments/files/18560020/MGRImGuiTemplate.zip)<br />
+[MGRImGuiTemplate.zip](https://github.com/user-attachments/files/22043278/MGRImGuiTemplate.zip)<br />
 To install a template you need to go to your documents folder and find `Visual Studio year` <br/>
 Move the template zip into the `Templates\ProjectTemplates\`
 
