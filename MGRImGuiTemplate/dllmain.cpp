@@ -14,6 +14,8 @@ public:
 		/* // Or if you want to switch it to Present
 		Events::OnPresent += gui::OnEndScene;
 		*/
+
+		Events::OnMainCleanupEvent.before += gui::OnMainCleanup;
 	}
 
 	Plugin()

@@ -13,4 +13,5 @@ namespace gui
 	void LoadStyle();
 
 	void OnEndScene();
+	void OnMainCleanup();
 }
